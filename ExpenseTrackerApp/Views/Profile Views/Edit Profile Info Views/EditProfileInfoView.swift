@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct EditProfileInfoView: View {
+    let userID: UUID
     @Binding var name: String
     @Binding var showingImagePicker: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
-            EditProfileNameView(name: $name)
+            EditProfileNameView(userID: userID, name: $name)
             .padding(.bottom, 5)
             
             UploadProfileImageView(showingImagePicker: $showingImagePicker)

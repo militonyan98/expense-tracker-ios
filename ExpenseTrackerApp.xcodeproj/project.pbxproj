@@ -27,6 +27,30 @@
 		0FC764BA2A0E79F700099D85 /* UploadProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764B92A0E79F700099D85 /* UploadProfileImageView.swift */; };
 		0FC764BC2A0E7A1500099D85 /* EditProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764BB2A0E7A1500099D85 /* EditProfileInfoView.swift */; };
 		0FC764C22A0E7E1A00099D85 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764C12A0E7E1A00099D85 /* TransactionType.swift */; };
+		0FC764C52A153AD700099D85 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764C42A153AD700099D85 /* DataController.swift */; };
+		0FC764C82A153C0500099D85 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764C62A153C0500099D85 /* DataModel.xcdatamodeld */; };
+		0FC764CF2A2509C000099D85 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764C92A2509C000099D85 /* Transaction+CoreDataClass.swift */; };
+		0FC764D02A2509C000099D85 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764CA2A2509C000099D85 /* Transaction+CoreDataProperties.swift */; };
+		0FC764D12A2509C000099D85 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764CB2A2509C000099D85 /* Category+CoreDataClass.swift */; };
+		0FC764D22A2509C000099D85 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764CC2A2509C000099D85 /* Category+CoreDataProperties.swift */; };
+		0FC764D32A2509C000099D85 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764CD2A2509C000099D85 /* User+CoreDataClass.swift */; };
+		0FC764D42A2509C000099D85 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764CE2A2509C000099D85 /* User+CoreDataProperties.swift */; };
+		0FC764D62A26484B00099D85 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764D52A26484B00099D85 /* Categories.swift */; };
+		0FC764D82A2657BD00099D85 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764D72A2657BD00099D85 /* TransactionModel.swift */; };
+		0FC764DB2A265B2600099D85 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764DA2A265B2600099D85 /* UserModel.swift */; };
+		0FC764DD2A265B7900099D85 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764DC2A265B7900099D85 /* CategoryModel.swift */; };
+		0FC764E02A29021800099D85 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764DF2A29021800099D85 /* TransactionViewModel.swift */; };
+		0FC764E32A2A455E00099D85 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764E22A2A455E00099D85 /* CategoryViewModel.swift */; };
+		0FC764E52A2F732700099D85 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764E42A2F732700099D85 /* CategoryController.swift */; };
+		0FC764E72A2F738A00099D85 /* TransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764E62A2F738A00099D85 /* TransactionController.swift */; };
+		0FC764E92A2F9EAF00099D85 /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764E82A2F9EAF00099D85 /* SortType.swift */; };
+		0FC764EB2A337A1800099D85 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764EA2A337A1800099D85 /* UserController.swift */; };
+		0FC764EF2A3783BF00099D85 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764EE2A3783BF00099D85 /* TransactionView.swift */; };
+		0FC764F12A883DED00099D85 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764F02A883DED00099D85 /* UserViewModel.swift */; };
+		0FC764F52A8A920500099D85 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764F42A8A920500099D85 /* EditView.swift */; };
+		0FC764F72A9299AC00099D85 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC764F62A9299AC00099D85 /* DetailsView.swift */; };
+		0FC7652F2AAE123800099D85 /* NewCustomer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7652D2AAE123800099D85 /* NewCustomer+CoreDataClass.swift */; };
+		0FC765302AAE123800099D85 /* NewCustomer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7652E2AAE123800099D85 /* NewCustomer+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +75,30 @@
 		0FC764B92A0E79F700099D85 /* UploadProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfileImageView.swift; sourceTree = "<group>"; };
 		0FC764BB2A0E7A1500099D85 /* EditProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInfoView.swift; sourceTree = "<group>"; };
 		0FC764C12A0E7E1A00099D85 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		0FC764C42A153AD700099D85 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		0FC764C72A153C0500099D85 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		0FC764C92A2509C000099D85 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FC764CA2A2509C000099D85 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FC764CB2A2509C000099D85 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FC764CC2A2509C000099D85 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FC764CD2A2509C000099D85 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FC764CE2A2509C000099D85 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FC764D52A26484B00099D85 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		0FC764D72A2657BD00099D85 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		0FC764DA2A265B2600099D85 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0FC764DC2A265B7900099D85 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		0FC764DF2A29021800099D85 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		0FC764E22A2A455E00099D85 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		0FC764E42A2F732700099D85 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		0FC764E62A2F738A00099D85 /* TransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionController.swift; sourceTree = "<group>"; };
+		0FC764E82A2F9EAF00099D85 /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
+		0FC764EA2A337A1800099D85 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		0FC764EE2A3783BF00099D85 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		0FC764F02A883DED00099D85 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		0FC764F42A8A920500099D85 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		0FC764F62A9299AC00099D85 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		0FC7652D2AAE123800099D85 /* NewCustomer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewCustomer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FC7652E2AAE123800099D85 /* NewCustomer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewCustomer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +131,25 @@
 		0FC7648E2A0AA27600099D85 /* ExpenseTrackerApp */ = {
 			isa = PBXGroup;
 			children = (
+				0FC7652D2AAE123800099D85 /* NewCustomer+CoreDataClass.swift */,
+				0FC7652E2AAE123800099D85 /* NewCustomer+CoreDataProperties.swift */,
 				0FC7648F2A0AA27600099D85 /* ExpenseTrackerAppApp.swift */,
-				0FC764C32A0E7E1E00099D85 /* Enums */,
+				0FC764C92A2509C000099D85 /* Transaction+CoreDataClass.swift */,
+				0FC764CA2A2509C000099D85 /* Transaction+CoreDataProperties.swift */,
+				0FC764CB2A2509C000099D85 /* Category+CoreDataClass.swift */,
+				0FC764CC2A2509C000099D85 /* Category+CoreDataProperties.swift */,
+				0FC764CD2A2509C000099D85 /* User+CoreDataClass.swift */,
+				0FC764CE2A2509C000099D85 /* User+CoreDataProperties.swift */,
+				0FC764D92A2657C200099D85 /* Models */,
 				0FC764BD2A0E7ADC00099D85 /* Views */,
+				0FC764DE2A2901DF00099D85 /* ViewModels */,
+				0FC764E12A29022900099D85 /* Controllers */,
 				0FC764AB2A0BD71000099D85 /* ImagePicker.swift */,
 				0FC764AF2A0E78FB00099D85 /* CustomTextFieldStyle.swift */,
 				0FC764AD2A0E710700099D85 /* TextFieldLimitModifer.swift */,
 				0FC764932A0AA27800099D85 /* Assets.xcassets */,
 				0FC764952A0AA27800099D85 /* Preview Content */,
+				0FC764C62A153C0500099D85 /* DataModel.xcdatamodeld */,
 			);
 			path = ExpenseTrackerApp;
 			sourceTree = "<group>";
@@ -109,8 +168,11 @@
 				0FC764912A0AA27600099D85 /* ContentView.swift */,
 				0FC764A92A0AB91300099D85 /* NavigationTabView.swift */,
 				0FC764A52A0AB81A00099D85 /* AddView.swift */,
+				0FC764F42A8A920500099D85 /* EditView.swift */,
+				0FC764F62A9299AC00099D85 /* DetailsView.swift */,
 				0FC764A12A0AB7D900099D85 /* ChartView.swift */,
 				0FC7649F2A0AB7BE00099D85 /* CategoryView.swift */,
+				0FC764EE2A3783BF00099D85 /* TransactionView.swift */,
 				0FC7649D2A0AB79F00099D85 /* HomeView.swift */,
 				0FC764BE2A0E7AF200099D85 /* Profile Views */,
 			);
@@ -151,8 +213,42 @@
 			isa = PBXGroup;
 			children = (
 				0FC764C12A0E7E1A00099D85 /* TransactionType.swift */,
+				0FC764D52A26484B00099D85 /* Categories.swift */,
+				0FC764E82A2F9EAF00099D85 /* SortType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		0FC764D92A2657C200099D85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0FC764C32A0E7E1E00099D85 /* Enums */,
+				0FC764D72A2657BD00099D85 /* TransactionModel.swift */,
+				0FC764DA2A265B2600099D85 /* UserModel.swift */,
+				0FC764DC2A265B7900099D85 /* CategoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0FC764DE2A2901DF00099D85 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0FC764DF2A29021800099D85 /* TransactionViewModel.swift */,
+				0FC764F02A883DED00099D85 /* UserViewModel.swift */,
+				0FC764E22A2A455E00099D85 /* CategoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0FC764E12A29022900099D85 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FC764C42A153AD700099D85 /* DataController.swift */,
+				0FC764E42A2F732700099D85 /* CategoryController.swift */,
+				0FC764E62A2F738A00099D85 /* TransactionController.swift */,
+				0FC764EA2A337A1800099D85 /* UserController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,20 +322,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC764C22A0E7E1A00099D85 /* TransactionType.swift in Sources */,
+				0FC764C82A153C0500099D85 /* DataModel.xcdatamodeld in Sources */,
 				0FC764AE2A0E710700099D85 /* TextFieldLimitModifer.swift in Sources */,
+				0FC764E92A2F9EAF00099D85 /* SortType.swift in Sources */,
+				0FC764DB2A265B2600099D85 /* UserModel.swift in Sources */,
 				0FC764B02A0E78FB00099D85 /* CustomTextFieldStyle.swift in Sources */,
+				0FC764E52A2F732700099D85 /* CategoryController.swift in Sources */,
+				0FC764D82A2657BD00099D85 /* TransactionModel.swift in Sources */,
 				0FC764A62A0AB81A00099D85 /* AddView.swift in Sources */,
+				0FC764D62A26484B00099D85 /* Categories.swift in Sources */,
 				0FC7649E2A0AB79F00099D85 /* HomeView.swift in Sources */,
+				0FC764D12A2509C000099D85 /* Category+CoreDataClass.swift in Sources */,
+				0FC764D22A2509C000099D85 /* Category+CoreDataProperties.swift in Sources */,
+				0FC764F12A883DED00099D85 /* UserViewModel.swift in Sources */,
+				0FC764E02A29021800099D85 /* TransactionViewModel.swift in Sources */,
+				0FC764D02A2509C000099D85 /* Transaction+CoreDataProperties.swift in Sources */,
 				0FC764B82A0E79D800099D85 /* EditProfileNameView.swift in Sources */,
+				0FC764DD2A265B7900099D85 /* CategoryModel.swift in Sources */,
+				0FC764D42A2509C000099D85 /* User+CoreDataProperties.swift in Sources */,
+				0FC764EB2A337A1800099D85 /* UserController.swift in Sources */,
+				0FC764F52A8A920500099D85 /* EditView.swift in Sources */,
+				0FC764F72A9299AC00099D85 /* DetailsView.swift in Sources */,
 				0FC764B42A0E797E00099D85 /* ProfileImageView.swift in Sources */,
 				0FC764922A0AA27600099D85 /* ContentView.swift in Sources */,
 				0FC764AC2A0BD71000099D85 /* ImagePicker.swift in Sources */,
+				0FC764CF2A2509C000099D85 /* Transaction+CoreDataClass.swift in Sources */,
+				0FC7652F2AAE123800099D85 /* NewCustomer+CoreDataClass.swift in Sources */,
 				0FC764A02A0AB7BE00099D85 /* CategoryView.swift in Sources */,
+				0FC764C52A153AD700099D85 /* DataController.swift in Sources */,
+				0FC764EF2A3783BF00099D85 /* TransactionView.swift in Sources */,
 				0FC764AA2A0AB91300099D85 /* NavigationTabView.swift in Sources */,
 				0FC764A22A0AB7D900099D85 /* ChartView.swift in Sources */,
 				0FC764BA2A0E79F700099D85 /* UploadProfileImageView.swift in Sources */,
+				0FC764D32A2509C000099D85 /* User+CoreDataClass.swift in Sources */,
 				0FC764B22A0E794C00099D85 /* ProfileNameView.swift in Sources */,
 				0FC764A42A0AB7F500099D85 /* ProfileView.swift in Sources */,
+				0FC765302AAE123800099D85 /* NewCustomer+CoreDataProperties.swift in Sources */,
+				0FC764E32A2A455E00099D85 /* CategoryViewModel.swift in Sources */,
+				0FC764E72A2F738A00099D85 /* TransactionController.swift in Sources */,
 				0FC764B62A0E79A500099D85 /* ProfileInfoView.swift in Sources */,
 				0FC764BC2A0E7A1500099D85 /* EditProfileInfoView.swift in Sources */,
 				0FC764902A0AA27600099D85 /* ExpenseTrackerAppApp.swift in Sources */,
@@ -443,6 +563,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FC764C62A153C0500099D85 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FC764C72A153C0500099D85 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 0FC764C72A153C0500099D85 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0FC764842A0AA27600099D85 /* Project object */;
 }

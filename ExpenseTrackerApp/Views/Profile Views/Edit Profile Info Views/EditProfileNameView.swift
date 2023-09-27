@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct EditProfileNameView: View {
+    @EnvironmentObject var userVM: UserViewModel
+    let userID: UUID
     @Binding var name: String
+    
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Edit your name:")
+            Text("Edit your info:")
                 .fontWeight(.semibold)
                 .foregroundColor(.indigo)
                 .padding(.leading, 5)

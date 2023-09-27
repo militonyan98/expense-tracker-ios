@@ -16,9 +16,9 @@ struct NavigationTabView: View {
                 }
                 .edgesIgnoringSafeArea(.top)
             
-            CategoryView()
+            TransactionsView()
                 .tabItem {
-                    Label("Category", systemImage: "square.split.2x2.fill")
+                    Label("Transactions", systemImage: "list.clipboard.fill")
                 }
             
             AddView()
@@ -26,9 +26,9 @@ struct NavigationTabView: View {
                     Image(systemName: "plus")
                 }
             
-            ChartView()
+            CategoryView()
                 .tabItem {
-                    Label("Chart", systemImage: "chart.pie.fill")
+                    Label("Categories", systemImage: "square.split.2x2.fill")
                 }
             
             ProfileView()
@@ -36,7 +36,7 @@ struct NavigationTabView: View {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
         }
-        //.accentColor(.indigo)
+        .accentColor(.cyan)
         //.padding(.bottom)
     }
 }

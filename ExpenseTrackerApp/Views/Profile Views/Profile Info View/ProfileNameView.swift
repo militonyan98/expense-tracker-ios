@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileNameView: View {
-    @Binding var name: String
+    let name: String
     @Binding var showingTextfield: Bool
     
     var body: some View {

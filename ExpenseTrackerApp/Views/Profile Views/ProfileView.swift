@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var userVM: UserViewModel
+    
+    @State private var userID: UUID?
+    
     @State private var name: String = ""
     @State private var showingTextfield = false
     
@@ -26,19 +30,28 @@ struct ProfileView: View {
                         .position(x: geometry.size.width / 4, y: geometry.size.height * 0.08)
                         .shadow(radius: 3)
                     
-                    ProfileInfoView(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, name: $name, showingTextfield: $showingTextfield)
+                    ProfileInfoView(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, name: userVM.user.name, showingTextfield: $showingTextfield)
                     .padding(.top, 25)
                 }
                 .ignoresSafeArea()
                 
                 if showingTextfield {
-                    EditProfileInfoView(name: $name, showingImagePicker: $showingImagePicker)
+                    EditProfileInfoView(userID: userVM.user.id, name: $name, showingImagePicker: $showingImagePicker)
                     .padding()
 //                    .position(x: geometry.size.width / 2, y: geometry.size.height * 0.2)
+                    Button("Done") {
+                        userVM.createorUpdateUser(user: UserModel(name: name, image: "", transactions: []))
+                        showingTextfield = false
+                        
+                    }
+                    .padding()
                 }
             }
         }
         .ignoresSafeArea(.keyboard)
+        .onAppear {
+            userVM.fetchUserData()
+        }
     }
 }
 

@@ -8,112 +8,88 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var transactionVM: TransactionViewModel
+    
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [.purple, .indigo]), startPoint: .trailing, endPoint: .leading)
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
+        NavigationStack {
+            GeometryReader { geometry in
+                VStack {
+                    ZStack {
+                        LinearGradient(gradient: Gradient(colors: [.purple, .indigo]), startPoint: .trailing, endPoint: .leading)
+                            .frame(width: geometry.size.width, height: geometry.size.height * 0.5)
+                            .padding(.top, -30)
+                        
+                        BalanceSummaryView()
+                            .padding(.top, 30)
+                            .padding(.bottom, 80)
+                    }
+                    .ignoresSafeArea()
                     
-                    BalanceSummaryView()
-                        .padding(.top, 25)
-                        .padding(.bottom, 110)
+                    TransactionsListView()
+                        .padding(.top, -140)
+                        .onAppear {
+                            transactionVM.fetchTransactionData()
+                        }
                 }
-                .ignoresSafeArea()
-                
-                TransactionsListView()
-                    .padding(.top, -110)
-                
             }
         }
-    }
-}
-
-struct TransactionView: View, Identifiable {
-    var id = UUID()
-    
-    @State var title: String
-    @State var amount: Double
-    @State var date: Date
-    @State var transactionType: TransactionType
-    
-    var amountString: String {
-        let initial = transactionType == .income ? "+ $" : "- $"
-        let formatedAmount = String(format: "\(initial)%.2f", amount)
-        
-        return formatedAmount
-    }
-    
-    var body: some View {
-        HStack(alignment: .center, spacing: 2) {
-            Spacer()
-            
-            ZStack {
-                Circle()
-                    .frame(width: 45, height: 45)
-                    .foregroundColor(.indigo.opacity(0.6))
-                
-                Image(systemName: "signature")
-                    .foregroundColor(.indigo)
-            }
-            .padding(.trailing)
-            
-            VStack(alignment: .leading, spacing: 10) {
-                Text(title)
-                    .fontWeight(.medium)
-                    //.padding(.bottom, 3)
-                Text(Date.now, format: .dateTime.hour().minute().day().month())
-                    .font(.caption)
-            }
-            
-            Spacer()
-            Spacer()
-            //Divider()
-            
-            Text(amountString)
-                .fontWeight(.semibold)
-                .foregroundColor(transactionType == .income ? .green : .red)
-            
-            Spacer()
-        }
-        .padding([.top, .bottom], 25)
-        .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(LinearGradient(gradient: Gradient(colors: [.purple, .indigo, .cyan]), startPoint: .leading, endPoint: .trailing), lineWidth: 1.8)
-            )
-//        .padding([.leading, .trailing], 2)
-    }
-}
-
-struct TransactionsListView: View {
-    var transactions = [TransactionView(title: "Salary", amount: 2500, date: Date.now, transactionType: .income), TransactionView(title: "Bonus", amount: 300, date: Date.now, transactionType: .income), TransactionView(title: "Food", amount: 200, date: Date.now, transactionType: .expense), TransactionView(title: "Holiday", amount: 3200, date: Date.now, transactionType: .expense), TransactionView(title: "Salary", amount: 2500, date: Date.now, transactionType: .income), TransactionView(title: "Clothing", amount: 350, date: Date.now, transactionType: .expense), TransactionView(title: "Bonus", amount: 300, date: Date.now, transactionType: .income)]
-    
-    var body: some View {
-        List {
-            ForEach(transactions) { transaction in
-                transaction
-            }
-            .listRowSeparator(.hidden)
-            
-        }
-        .scrollContentBackground(.hidden)
+        .navigationBarBackButtonHidden()
     }
 }
 
 struct BalanceSummaryView: View {
+    @EnvironmentObject var transactionVM: TransactionViewModel
+    
+    var incomes: Float {
+        var sum: Float = 0.0
+        
+        for i in 0..<transactionVM.transactions.count {
+            if transactionVM.transactions[i].type == .income {
+                sum += transactionVM.transactions[i].amount
+            }
+        }
+        
+        return sum
+    }
+    
+    var expenses: Float {
+        var sum: Float = 0.0
+        
+        for i in 0..<transactionVM.transactions.count {
+            if transactionVM.transactions[i].type == .expense {
+                sum += transactionVM.transactions[i].amount
+            }
+        }
+        
+        return sum
+    }
+    
+    var incomesString: String {
+        let formatedAmount = String(format: "%.2f", incomes)
+        
+        return "$" + formatedAmount
+    }
+    
+    var expensesString: String {
+        let formatedAmount = String(format: "%.2f", expenses)
+        
+        return "$" + formatedAmount
+    }
+    
     var body: some View {
         VStack(spacing: 10) {
             CurrentBalanceView()
+                .padding(.bottom, 10)
             
             HStack {
                 Spacer()
                 VStack {
-                    TransactionDetailsView(transactionType: .income, amount: "$40,000")
+                    TransactionDetailsView(transactionType: .income, amount: incomesString)
                 }
                 Spacer()
                 Spacer()
                 VStack {
-                    TransactionDetailsView(transactionType: .expense, amount: "$10,000")
+                    TransactionDetailsView(transactionType: .expense, amount: expensesString)
                 }
                 Spacer()
             }
@@ -124,6 +100,41 @@ struct BalanceSummaryView: View {
 }
 
 struct CurrentBalanceView: View {
+    @EnvironmentObject var transactionVM: TransactionViewModel
+    
+    var balance: Float {
+        var sumIncomes: Float = 0.0
+        var sumExpenses: Float = 0.0
+        var finalBalance: Float = 0.0
+        
+        for i in 0..<transactionVM.transactions.count {
+            if transactionVM.transactions[i].type == .income {
+                sumIncomes += transactionVM.transactions[i].amount
+            } else {
+                sumExpenses += transactionVM.transactions[i].amount
+            }
+        }
+        
+        finalBalance = sumIncomes - sumExpenses
+        
+        return finalBalance
+    }
+    
+    var balanceString: String {
+        var actualBalance = balance
+        if actualBalance < 0 {
+            actualBalance = abs(actualBalance)
+        }
+        
+        let formatedAmount = String(format: "%.2f", actualBalance)
+        
+        if balance < 0 {
+            return "-" + "$" + formatedAmount
+        } else {
+            return "$" + formatedAmount
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 5) {
             Text("Current Balance:".uppercased())
@@ -132,11 +143,11 @@ struct CurrentBalanceView: View {
                 .tracking(2)
                 .foregroundColor(.white.opacity(0.5))
             
-            Text("$30,000")
-                .font(.system(size: 40))
+            Text(balanceString)
+                .font(.system(size: 35))
                 .bold()
             
-            Text("September 2023")
+            Text(Date.now, format: .dateTime.day().month().year())
                 .font(.system(size: 13))
                 .fontWeight(.medium)
                 .foregroundColor(.white.opacity(0.9))
@@ -151,15 +162,15 @@ struct TransactionDetailsView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: transactionType == . income ? "arrow.down.backward" : "arrow.up.right")
+            Image(systemName: transactionType == .income ? "arrow.down.backward" : "arrow.up.right")
                 .frame(width: 1, height: 1)
-                .foregroundColor(transactionType == . income ? .green : .red)
+                .foregroundColor(transactionType == .income ? .green : .red)
                 .padding()
                 .background(.white)
                 .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 5) {
-                Text(transactionType == . income ? "Income".uppercased() : "Expense".uppercased())
+                Text(transactionType == .income ? "Income".uppercased() : "Expense".uppercased())
                     .font(.caption)
                     .bold()
                 

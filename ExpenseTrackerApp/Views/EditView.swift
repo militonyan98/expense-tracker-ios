@@ -1,13 +1,13 @@
 //
-//  AddView.swift
+//  EditView.swift
 //  ExpenseTrackerApp
 //
-//  Created by Hermine Militonyan on 9.5.23..
+//  Created by Hermine Militonyan on 14.8.23..
 //
 
 import SwiftUI
 
-struct AddView: View {
+struct EditView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var transactionVM: TransactionViewModel
     
@@ -15,11 +15,12 @@ struct AddView: View {
     @State private var title: String = ""
     @State private var transactionType: TransactionType = TransactionType.expense
     @State private var amount: Float?
+    @State private var date: Date?
     
-    var fromTransactions: Bool? = false
+    @Binding var transactionID: UUID?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section("Title") {
                     TextField("Transaction title", text: $title)
@@ -52,7 +53,7 @@ struct AddView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Add a transaction".uppercased())
+                    Text("Edit the transaction".uppercased())
                         .font(.headline)
                         .foregroundColor(.indigo)
                 }
@@ -66,13 +67,15 @@ struct AddView: View {
                         
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
-                        destination()
+                        Text("Cancel")
+                            .foregroundColor(.orange)
+                            .font(.body)
                     }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
-                        transactionVM.add(transaction: TransactionModel(id: UUID(), title: title, category: CategoryModel(name: Categories(rawValue: category.rawValue) ?? Categories.bills, icon: nil), type: transactionType, amount: amount!, date: Date()))
+                        transactionVM.update(transaction: TransactionModel(id: transactionID!, title: title, category: CategoryModel(name: category), type: transactionType, amount: amount!, date: date!))
 //
                         title = ""
                         category = Categories.bills
@@ -92,30 +95,21 @@ struct AddView: View {
             }
         }
         .navigationBarBackButtonHidden()
-    }
-    
-    func destination() -> AnyView {
-        if fromTransactions! {
-            return AnyView (
-                //NavigationLink(destination: TransactionsView()) {
-                    Text("Cancel")
-                        .foregroundColor(.orange)
-                        .font(.body)
-                //}
-            )
+        .onAppear {
+            let transactionModel = transactionVM.find(transaction: transactionID!)
+            category = transactionModel?.category.name ?? Categories.bills
+            title = transactionModel?.title ?? ""
+            transactionType = transactionModel?.type ?? TransactionType.expense
+            amount = transactionModel?.amount ?? 0.0
+            date = transactionModel?.date ?? Date.now
+            
+//            transactionVM.update(transaction: transactionID!, title: title, amount: amount!, date: date!, category: nil)
         }
-        
-        return AnyView (
-            Text("Reset")
-                .foregroundColor(.orange)
-                .font(.body)
-        )
     }
 }
 
-
-struct AddView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddView()
-    }
-}
+//struct EditView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditView()
+//    }
+//}
