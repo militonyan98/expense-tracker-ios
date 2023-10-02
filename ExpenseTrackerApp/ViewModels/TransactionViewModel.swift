@@ -45,14 +45,18 @@ class TransactionViewModel: ObservableObject {
         }
         
         if sortType == .amountAscending {
-            return filteredTransactions.sorted { $0.amount < $1.amount }
+            return filteredTransactions.sorted { getValue(transaction: $0) < getValue(transaction: $1) }
         }
         
         if sortType == .amountDescending {
-            return filteredTransactions.sorted { $0.amount > $1.amount }
+            return filteredTransactions.sorted { getValue(transaction: $0) > getValue(transaction: $1) }
         }
         
         return filteredTransactions
+    }
+    
+    func getValue(transaction: TransactionModel) -> Float {
+        return transaction.amount * Float(transaction.type == .expense ? -1 : 1)
     }
     
     func fetchTransactionData() {

@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct TransactionView: View {
-    //@ObservedObject var transactionVM : TransactionViewModel
-    //var index : Int
     var transaction: TransactionModel
     
     var amountString: String {
-        let initial = transaction.type == .income ? "+ $" : "- $"
+        let initial = transaction.type == .income ? "+ \(Locale.current.currencySymbol!)" : "- \(Locale.current.currencySymbol!)"
         let formatedAmount = String(format: "\(initial)%.2f", transaction.amount)
 
         return formatedAmount
@@ -78,11 +76,6 @@ struct TransactionsListView: View {
     
     @State var transactionID: UUID?
     
-//    func printTitle(title: String) -> Bool {
-//        print(title)
-//        return true
-//    }
-    
     var body: some View {
         List {
             ForEach(transactionVM.sortedTransactions.indices, id: \.self) { id in
@@ -116,37 +109,6 @@ struct TransactionsListView: View {
                    
                 }
             }
-//            ForEach(transactionVM.transactions, id: \.id) { transaction in
-//                if transaction.category.name == givenCategory?.name || givenCategory == nil {
-//                    ZStack {
-//                        NavigationLink(destination: DetailsView(transaction: transaction)) {
-//                            EmptyView()
-//                        }
-//                        .frame(width: 0)
-//                        .opacity(0)
-//
-//                        TransactionView(transaction: transaction)
-//                            .swipeActions(allowsFullSwipe: false) {
-//                                Button {
-//                                    transactionVM.removeBy(id: transaction.id)
-//                                } label: {
-//                                    Label("Delete", systemImage: "trash.fill")
-//                                }
-//                                .tint(.red)
-//
-//                                Button {
-//                                    goToEdit.toggle()
-//                                    transactionID = transaction.id
-//                                } label: {
-//                                    Label("Edit", systemImage: "pencil")
-//                                }
-//                                .tint(.yellow)
-//                            }
-//                            .id(transaction.id)
-//                    }
-//
-//                }
-//            }
             .onDelete(perform: transactionVM.remove)
             .listRowSeparator(.hidden)
         }
