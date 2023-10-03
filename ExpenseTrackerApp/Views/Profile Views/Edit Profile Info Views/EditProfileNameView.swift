@@ -19,7 +19,7 @@ struct EditProfileNameView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.indigo)
                 .padding(.leading, 5)
-            TextField("Name", text: $name)
+            TextField("Name", text: $userVM.user.name)
                 .textFieldStyle(CustomTextFieldStyle())
                 .textCase(.uppercase)
                 .autocorrectionDisabled()

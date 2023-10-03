@@ -17,8 +17,8 @@ struct ProfileInfoView: View {
     
     var body: some View {
         VStack {
-            ProfileImageView(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage)
-//            ProfileImageView()
+            ProfileImageView(image: $image, inputImage: $inputImage)
+            
             
             ProfileNameView(name: name, showingTextfield: $showingTextfield)
             .padding(10)

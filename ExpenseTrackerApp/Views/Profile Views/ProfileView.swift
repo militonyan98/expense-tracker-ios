@@ -36,11 +36,11 @@ struct ProfileView: View {
                 .ignoresSafeArea()
                 
                 if showingTextfield {
-                    EditProfileInfoView(userID: userVM.user.id, name: $name, showingImagePicker: $showingImagePicker)
+                    EditProfileInfoView(userID: userVM.user.id, name: $name, showingImagePicker: $showingImagePicker, image: $image, inputImage: $inputImage)
                     .padding()
 //                    .position(x: geometry.size.width / 2, y: geometry.size.height * 0.2)
                     Button("Done") {
-                        userVM.createorUpdateUser(user: UserModel(name: name, image: "", transactions: []))
+                        userVM.createorUpdateUser(user: UserModel(name: name != "" ? name : userVM.user.name, image: inputImage ?? userVM.user.image, transactions: []))
                         showingTextfield = false
                         
                     }

@@ -11,6 +11,8 @@ struct EditProfileInfoView: View {
     let userID: UUID
     @Binding var name: String
     @Binding var showingImagePicker: Bool
+    @Binding var image: Image?
+    @Binding var inputImage: UIImage?
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,8 +23,17 @@ struct EditProfileInfoView: View {
             
             //Spacer()
         }
+        .onChange(of: inputImage) { _ in loadImage() }
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePicker(image: $inputImage)
+        }
         
         Spacer()
+    }
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
     }
 }
 

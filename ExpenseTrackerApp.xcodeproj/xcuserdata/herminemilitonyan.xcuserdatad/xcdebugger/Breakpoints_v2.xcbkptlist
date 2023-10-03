@@ -458,8 +458,8 @@
             filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "add(user:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -557,7 +557,7 @@
             startingLineNumber = "55"
             endingLineNumber = "55"
             landmarkName = "update(user:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -570,8 +570,8 @@
             filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "fetchUser()"
             landmarkType = "7">
             <Locations>
@@ -648,8 +648,8 @@
             filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "init(dataController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -667,7 +667,7 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "createorUpdateUser(user:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -683,7 +683,7 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "add(user:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -696,8 +696,8 @@
             filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "update(user:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -712,8 +712,8 @@
             filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "update(user:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -728,9 +728,89 @@
             filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "update(user:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "788C6117-17C3-47DF-8A48-3830CF7FDE28"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
+            landmarkName = "add(user:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D786529-B2E8-4693-A951-E5367CB15E15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "update(user:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D786529-B2E8-4693-A951-E5367CB15E15 - fb48839f7de455c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseTrackerApp.UserController.update(user: ExpenseTrackerApp.UserModel) -&gt; ()"
+                  moduleName = "ExpenseTrackerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/herminemilitonyan/Desktop/development/ExpenseTrackerApp/ExpenseTrackerApp/Controllers/UserController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "784">
+               </Location>
+               <Location
+                  uuid = "3D786529-B2E8-4693-A951-E5367CB15E15 - fb48839f7de4558f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ExpenseTrackerApp.UserController.update(user: ExpenseTrackerApp.UserModel) -&gt; ()"
+                  moduleName = "ExpenseTrackerApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/herminemilitonyan/Desktop/development/ExpenseTrackerApp/ExpenseTrackerApp/Controllers/UserController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "816">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD5328D0-BAB3-42EF-9FEF-7D45EACF4ECF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpenseTrackerApp/Controllers/UserController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchUserModel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

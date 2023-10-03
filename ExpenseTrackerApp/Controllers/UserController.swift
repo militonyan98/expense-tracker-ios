@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class UserController {
     var dataController: DataController
@@ -46,11 +47,16 @@ class UserController {
         var userModel: UserModel? = nil
         
         if fetchedUser != nil {
-            userModel = UserModel(name: "", image: "", transactions: [])
+            userModel = UserModel(name: "", image: UIImage(), transactions: [])
             userModel?.name = fetchedUser?.unwrappedName ?? ""
             userModel?.id = fetchedUser?.id ?? UUID()
+            if fetchedUser?.image != nil {
+                userModel?.image = UIImage(data: fetchedUser!.image!)!
+            }
             
-            userModel?.image = fetchedUser?.unwrappedImage ?? ""
+            
+            //userModel?.image = fetchedUser?.image!
+//            userModel?.image = fetchedUser?.unwrappedImage ?? ""
             //userModel.transactions = fetchedUser?.transactionArray ?? []
             
         }
@@ -76,7 +82,7 @@ class UserController {
         let newUser = User(context: moc)
 //        newUser.id = UUID()
         newUser.name = user.name
-        newUser.image = user.image
+        newUser.image = user.image.pngData()
         
         save()
     }
@@ -87,7 +93,9 @@ class UserController {
         
 //        if fetchedUser != nil {
             fetchedUser!.name = user.name
-            fetchedUser!.image = user.image
+        let data = user.image.pngData()
+        
+        fetchedUser!.image = data
 //        }
         
         save()

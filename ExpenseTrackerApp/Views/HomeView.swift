@@ -67,13 +67,13 @@ struct BalanceSummaryView: View {
     var incomesString: String {
         let formatedAmount = String(format: "%.2f", incomes)
         
-        return "$" + formatedAmount
+        return "\(Locale.current.currencySymbol!)" + formatedAmount
     }
     
     var expensesString: String {
         let formatedAmount = String(format: "%.2f", expenses)
         
-        return "$" + formatedAmount
+        return "\(Locale.current.currencySymbol!)" + formatedAmount
     }
     
     var body: some View {
@@ -129,9 +129,9 @@ struct CurrentBalanceView: View {
         let formatedAmount = String(format: "%.2f", actualBalance)
         
         if balance < 0 {
-            return "-" + "$" + formatedAmount
+            return "-" + "\(Locale.current.currencySymbol!)" + formatedAmount
         } else {
-            return "$" + formatedAmount
+            return "\(Locale.current.currencySymbol!)" + formatedAmount
         }
     }
     
