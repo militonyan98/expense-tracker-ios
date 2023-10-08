@@ -14,7 +14,7 @@ struct ProfileImageView: View {
     @Binding var inputImage: UIImage?
     
     var imageToDisplay: Image {
-        image != nil ? image! : Image(uiImage: userVM.user.image)
+        image != nil ? image! : userVM.user.image.size.width != 0 ? Image(uiImage: userVM.user.image) : Image(systemName: "person.crop.circle.fill")
     }
     
     var body: some View {

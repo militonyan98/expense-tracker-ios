@@ -15,6 +15,7 @@ struct CustomTextFieldStyle: TextFieldStyle {
                 .fill(LinearGradient(gradient: Gradient(colors: [.indigo, .gray]), startPoint: .leading, endPoint: .trailing).opacity(0.2)))
             .shadow(color: .gray, radius: 10)
             .foregroundColor(.indigo)
-            .font(.headline)
+//            .font(.headline)
+            .fontWeight(.medium)
     }
 }

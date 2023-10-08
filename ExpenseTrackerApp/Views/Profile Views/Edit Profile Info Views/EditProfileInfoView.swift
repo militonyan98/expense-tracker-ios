@@ -20,8 +20,6 @@ struct EditProfileInfoView: View {
             .padding(.bottom, 5)
             
             UploadProfileImageView(showingImagePicker: $showingImagePicker)
-            
-            //Spacer()
         }
         .onChange(of: inputImage) { _ in loadImage() }
         .sheet(isPresented: $showingImagePicker) {

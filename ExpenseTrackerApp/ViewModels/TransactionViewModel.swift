@@ -23,7 +23,7 @@ class TransactionViewModel: ObservableObject {
     
     var filteredTransactions: [TransactionModel] {
         if searchText.isEmpty {
-            return transactions
+            return transactions.sorted{ $0.date > $1.date }
         } else {
             return transactions.filter {
                 $0.title.localizedCaseInsensitiveContains(searchText)
@@ -33,7 +33,7 @@ class TransactionViewModel: ObservableObject {
     
     var sortedTransactions: [TransactionModel] {
         if sortType == .date {
-            return filteredTransactions.sorted { $0.date < $1.date }
+            return filteredTransactions.sorted { $0.date > $1.date }
         }
         
         if sortType == .alphabetical {

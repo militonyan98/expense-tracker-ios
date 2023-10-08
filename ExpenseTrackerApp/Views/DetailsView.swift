@@ -38,7 +38,7 @@ struct DetailsView: View {
                 }
                 
                 Section("Details") {
-                    Text((String(format: "$%.2f", transaction.amount)))
+                    Text((String(format: "\(Locale.current.currencySymbol!)%.2f", transaction.amount)))
                     
 //                    HStack {
                         Text(transaction.type.rawValue.uppercased())

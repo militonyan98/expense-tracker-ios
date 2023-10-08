@@ -25,7 +25,7 @@ struct HomeView: View {
                     }
                     .ignoresSafeArea()
                     
-                    TransactionsListView()
+                    RecentTransactionsView()
                         .padding(.top, -140)
                         .onAppear {
                             transactionVM.fetchTransactionData()
