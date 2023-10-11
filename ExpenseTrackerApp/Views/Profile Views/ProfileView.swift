@@ -16,7 +16,6 @@ struct ProfileView: View {
     @State private var showingTextfield = false
     
     @State private var image: Image?
-    @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     
     var body: some View {
@@ -30,13 +29,23 @@ struct ProfileView: View {
                         .position(x: geometry.size.width / 4, y: geometry.size.height * 0.08)
                         .shadow(radius: 3)
                     
-                    ProfileInfoView(image: $image, showingImagePicker: $showingImagePicker, inputImage: $inputImage, name: userVM.user.name, showingTextfield: $showingTextfield)
-                    .padding(.top, 25)
+                    ProfileInfoView(image: $image, name: userVM.user.name)
+                        .onEditClick { showingTextfield = true }
+                        .padding(.top, 25)
+                    
                 }
                 .ignoresSafeArea()
                 
                 if showingTextfield {
-                    EditProfileInfoView(userID: userVM.user.id, name: $name, showingImagePicker: $showingImagePicker, image: $image, inputImage: $inputImage)
+                    EditProfileInfoView(name: $name)
+                        .onDeleteClick {
+                            image = nil
+                            inputImage = UIImage()
+                        }
+                        .onImageChange({ img in
+                            inputImage = img
+                            image = Image(uiImage: inputImage!)
+                        })
                     .padding()
 //                    .position(x: geometry.size.width / 2, y: geometry.size.height * 0.2)
                     Button("Done") {
@@ -45,15 +54,31 @@ struct ProfileView: View {
                         
                     }
                     .padding()
+                } else {
+                    Text("Keep up the great job of tracking your expenses using our app, \(userVM.user.name)!")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .textCase(.uppercase)
+                        .foregroundColor(.purple)
+                        .padding([.leading, .trailing], 50)
+                        .padding(.bottom, 300)
                 }
             }
         }
         .ignoresSafeArea(.keyboard)
         .onAppear {
             userVM.fetchUserData()
+            let user = userVM.user
+            if(user.image.size.width==0){
+                image = nil
+            }
+            else {
+                image = Image(uiImage: user.image)
+            }
         }
     }
 }
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {

@@ -50,7 +50,6 @@ class TransactionController {
         newTransaction.type = transaction.type.rawValue
         newTransaction.amount = transaction.amount
         newTransaction.date = transaction.date
-       // newTransaction.user = userController.fetchUser()
         
         save()
     }

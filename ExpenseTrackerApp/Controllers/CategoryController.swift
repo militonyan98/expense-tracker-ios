@@ -24,16 +24,6 @@ class CategoryDataController {
         do {
             let categories = try moc.fetch(Category.fetchRequest())
             
-//            for defaultCategory in CategoryModel.categories {
-//                for category in categories {
-//                    if category.name == defaultCategory.name.rawValue {
-//                        category.color = defaultCategory.icon?.color
-//                    }
-//                }
-//            }
-//            
-//            save()
-            
             return categories
         } catch {
             return []
@@ -51,7 +41,7 @@ class CategoryDataController {
         return categoryModels
     }
     
-    func addCategoriesToDbIfTheyDontExist(){
+    func addCategoriesToDbIfTheyDontExist() {
         let categories = self.fetchCategories()
         
         if !categories.isEmpty {

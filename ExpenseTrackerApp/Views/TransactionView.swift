@@ -49,13 +49,9 @@ struct TransactionView: View {
 
             Spacer()
             Spacer()
-            //Divider()
 
             Text(amountString)
                 .fontWeight(.semibold)
-//                .scaledToFill()
-//                .minimumScaleFactor(0.5)
-//                .lineLimit(1)
                 .foregroundColor(transaction.type == .income ? .green : .red)
 
             Spacer()
@@ -65,7 +61,6 @@ struct TransactionView: View {
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(LinearGradient(gradient: Gradient(colors: [.purple, .indigo, .cyan]), startPoint: .leading, endPoint: .trailing), lineWidth: 1.8)
             )
-//        .padding([.leading, .trailing], 2)
     }
 }
 
@@ -117,7 +112,6 @@ struct TransactionsListView: View {
             EditView(transactionID: $transactionID)
         }
         .onAppear {
-            print("fetch")
             transactionVM.fetchTransactionData()
         }
     }
@@ -130,12 +124,6 @@ struct RecentTransactionsView: View {
     @State var transactionID: UUID?
     
     var body: some View {
-        VStack {
-            Text("Recent Transactions")
-                .textCase(.uppercase)
-                .font(.caption)
-                .foregroundColor(.white)
-                .fontWeight(.bold)
             List {
                 ForEach(transactionVM.filteredTransactions.count > 10 ? transactionVM.filteredTransactions[0..<10].indices : transactionVM.filteredTransactions.indices , id: \.self) { id in
                     ZStack {
@@ -175,10 +163,8 @@ struct RecentTransactionsView: View {
                 EditView(transactionID: $transactionID)
             }
             .onAppear {
-                print("fetch")
                 transactionVM.fetchTransactionData()
             }
-        }
     }
 }
 

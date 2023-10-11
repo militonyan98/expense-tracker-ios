@@ -53,16 +53,8 @@ class UserController {
             if fetchedUser?.image != nil {
                 userModel?.image = UIImage(data: fetchedUser!.image!)!
             }
-            
-            
-            //userModel?.image = fetchedUser?.image!
-//            userModel?.image = fetchedUser?.unwrappedImage ?? ""
-            //userModel.transactions = fetchedUser?.transactionArray ?? []
-            
         }
         
-        
-       
         return userModel
     }
     
@@ -77,7 +69,6 @@ class UserController {
 //        }
     }
     
-    // usermodel
     func add(user: UserModel) {
         let newUser = User(context: moc)
 //        newUser.id = UUID()
@@ -87,13 +78,17 @@ class UserController {
         save()
     }
     
-    // usermodel
     func update(user: UserModel)  {
         let fetchedUser = fetchUser()
         
 //        if fetchedUser != nil {
             fetchedUser!.name = user.name
-        let data = user.image.pngData()
+        var data : Data? = nil
+        
+        if user.image != nil {
+            
+        }
+        data = user.image.pngData()
         
         fetchedUser!.image = data
 //        }

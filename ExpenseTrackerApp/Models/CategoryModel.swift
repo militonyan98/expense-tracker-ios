@@ -26,6 +26,7 @@ struct CategoryModel {
         CategoryModel(name: ExpenseTrackerApp.Categories.car, icon: CategoryIcon(image: "car", color: UIColor.systemIndigo)),
         CategoryModel(name: ExpenseTrackerApp.Categories.hygiene, icon: CategoryIcon(image: "shower", color: UIColor.systemBlue)),
         CategoryModel(name: ExpenseTrackerApp.Categories.health, icon: CategoryIcon(image: "cross.case", color: UIColor.systemTeal)),
+        CategoryModel(name: ExpenseTrackerApp.Categories.pets, icon: CategoryIcon(image: "pawprint", color: UIColor.brown)),
         CategoryModel(name: ExpenseTrackerApp.Categories.vacation, icon: CategoryIcon(image: "beach.umbrella", color: UIColor.systemYellow)),
         CategoryModel(name: ExpenseTrackerApp.Categories.other, icon: CategoryIcon(image: "ellipsis", color: UIColor.systemGray))
     ]

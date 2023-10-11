@@ -8,24 +8,30 @@
 import SwiftUI
 
 struct ProfileInfoView: View {
-//    @EnvironmentObject var userVM: UserViewModel
     @Binding var image: Image?
-    @Binding var showingImagePicker: Bool
-    @Binding var inputImage: UIImage?
     let name: String
-    @Binding var showingTextfield: Bool
+    
+    var onEditClick: (() -> Void)?
     
     var body: some View {
         VStack {
-            ProfileImageView(image: $image, inputImage: $inputImage)
+            ProfileImageView(image: $image)
             
-            
-            ProfileNameView(name: name, showingTextfield: $showingTextfield)
-            .padding(10)
+            ProfileNameView(name: name)
+                .onEditClick { onEditClick?() }
+                .padding(10)
             
             Spacer()
         }
         .foregroundColor(.white)
+    }
+}
+
+extension ProfileInfoView {
+    func onEditClick(_ handler: @escaping () -> Void) -> ProfileInfoView {
+        var new = self
+        new.onEditClick = handler
+        return new
     }
 }
 

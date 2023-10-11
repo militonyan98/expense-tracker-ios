@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EditProfileNameView: View {
     @EnvironmentObject var userVM: UserViewModel
-    let userID: UUID
     @Binding var name: String
     
     

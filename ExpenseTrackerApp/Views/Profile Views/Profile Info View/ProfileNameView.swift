@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileNameView: View {
     let name: String
-    @Binding var showingTextfield: Bool
+    
+    var onEditClick: (() -> Void)?
     
     var body: some View {
         HStack {
@@ -17,10 +18,16 @@ struct ProfileNameView: View {
                 .font(.headline)
                 .bold()
             Image(systemName: "pencil")
-                .onTapGesture {
-                    showingTextfield = true
-                }
+                .onTapGesture { onEditClick?() }
         }
+    }
+}
+
+extension ProfileNameView {
+    func onEditClick(_ handler: @escaping () -> Void) -> ProfileNameView {
+        var new = self
+        new.onEditClick = handler
+        return new
     }
 }
 

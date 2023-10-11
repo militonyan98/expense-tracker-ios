@@ -13,12 +13,12 @@ class UserViewModel: ObservableObject {
     private var dataController: DataController? = nil
     private var userController: UserController? = nil
     
-    init(){
+    init() {
         self.dataController = DataController()
         setDataController(data: self.dataController!)
     }
     
-    func setDataController(data: DataController){
+    func setDataController(data: DataController) {
         self.dataController = data
         self.userController = UserController(dataController : data)
         
@@ -30,10 +30,10 @@ class UserViewModel: ObservableObject {
         
     }
     
-    func createorUpdateUser(user: UserModel){
+    func createorUpdateUser(user: UserModel) {
         var alreadyUser = userController?.fetchUserModel()
         
-        if(alreadyUser != nil){
+        if alreadyUser != nil {
             alreadyUser?.name = user.name
             alreadyUser?.image = user.image
             alreadyUser?.id = user.id

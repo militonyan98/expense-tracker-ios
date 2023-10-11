@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct UploadProfileImageView: View {
-    @Binding var showingImagePicker: Bool
+//    @Binding var showingImagePicker: Bool
+    
+    //onClick event
+    var onClick: (() -> Void)?
     
     var body: some View {
         Button {
-            showingImagePicker = true
+            // call onclick
+            onClick?()
+//            showingImagePicker = true
         } label: {
             HStack {
-                Text("Upload image")
+                Text("Upload a photo")
                 Image(systemName: "photo.on.rectangle")
             }
             .padding(10)
@@ -26,6 +31,14 @@ struct UploadProfileImageView: View {
                 .allowsHitTesting(false)
         }
         .shadow(color: .gray, radius: 10)
+    }
+}
+
+extension UploadProfileImageView {
+    func onClick(_ handler: @escaping () -> Void) -> UploadProfileImageView {
+        var new = self
+        new.onClick = handler
+        return new
     }
 }
 

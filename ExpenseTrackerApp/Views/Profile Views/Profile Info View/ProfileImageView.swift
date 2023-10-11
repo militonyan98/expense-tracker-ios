@@ -9,12 +9,13 @@ import SwiftUI
 import PhotosUI
 
 struct ProfileImageView: View {
-    @EnvironmentObject var userVM: UserViewModel
     @Binding var image: Image?
-    @Binding var inputImage: UIImage?
     
     var imageToDisplay: Image {
-        image != nil ? image! : userVM.user.image.size.width != 0 ? Image(uiImage: userVM.user.image) : Image(systemName: "person.crop.circle.fill")
+        if image != nil {
+            return image!
+        }
+        return Image(systemName: "person.crop.circle.fill")
     }
     
     var body: some View {
