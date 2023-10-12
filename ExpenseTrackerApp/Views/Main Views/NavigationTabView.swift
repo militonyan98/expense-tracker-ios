@@ -36,9 +36,7 @@ struct NavigationTabView: View {
                     Label("Profile", systemImage: "person.crop.circle.fill")
                 }
         }
-        .accentColor(.cyan)
-        //.padding(.bottom)
-    }
+        .accentColor(.cyan)    }
 }
 
 struct NavigationTabView_Previews: PreviewProvider {

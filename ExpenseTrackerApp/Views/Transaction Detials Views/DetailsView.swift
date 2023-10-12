@@ -21,33 +21,15 @@ struct DetailsView: View {
                 }
                 
                 Section("Category") {
-//                    HStack {
-//                        ZStack {
-//                            Circle().fill(Color(transaction.category.icon?.color ?? UIColor.cyan).opacity(0.2))
-//                            Image(systemName: transaction.category.icon?.image ?? "signature")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 15, height: 15)
-//                                .foregroundColor(Color(transaction.category.icon?.color ?? UIColor.cyan))
-//                        }
-//                        .frame(width: 27, height: 27)
-                        
-                        Text(transaction.category.name.rawValue.uppercased())
-//                            .foregroundColor(Color(transaction.category.icon?.color ?? UIColor.cyan))
-//                    }
+                    Text(transaction.category.name.rawValue.uppercased())
+                        .foregroundColor(Color(transaction.category.icon?.color ?? UIColor.cyan))
                 }
                 
                 Section("Details") {
                     Text((String(format: "\(Locale.current.currencySymbol!)%.2f", transaction.amount)))
                     
-//                    HStack {
-                        Text(transaction.type.rawValue.uppercased())
-                            .foregroundColor(transaction.type == .income ? .green : .red)
-                        
-//                        Image(systemName: transaction.type == .income ? "arrow.down.backward" : "arrow.up.right")
-//                            .frame(width: 15, height: 15)
-//                            .foregroundColor(transaction.type == .income ? .green : .red)
-//                    }
+                    Text(transaction.type.rawValue.uppercased())
+                        .foregroundColor(transaction.type == .income ? .green : .red)
                 }
                 
                 Section("Date") {

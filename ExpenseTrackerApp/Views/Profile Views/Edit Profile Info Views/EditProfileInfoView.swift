@@ -7,37 +7,6 @@
 
 import SwiftUI
 
-struct DeleteProfileImageView: View {
-    var onClick: (() -> Void)?
-    
-    var body: some View {
-        Button {
-            onClick?()
-        } label: {
-            HStack {
-                Text("Delete the photo")
-                Image(systemName: "trash.fill")
-            }
-            .padding(10)
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(LinearGradient(gradient: Gradient(colors: [.indigo, .gray]), startPoint: .leading, endPoint: .trailing).opacity(0.2))
-                .allowsHitTesting(false)
-        }
-        .foregroundColor(.red)
-        .shadow(color: .gray, radius: 10)
-    }
-}
-
-extension DeleteProfileImageView {
-    func onClick(_ handler: @escaping () -> Void) -> DeleteProfileImageView {
-        var new = self
-        new.onClick = handler
-        return new
-    }
-}
-
 struct EditProfileInfoView: View {
     @Binding var name: String
     @State var showingImagePicker: Bool = false
@@ -52,10 +21,10 @@ struct EditProfileInfoView: View {
             .padding(.bottom, 5)
             
             HStack {
-                UploadProfileImageView() // no more argument required
+                UploadProfileImageButtonView() // no more argument required
                     .onClick { showingImagePicker = true }
                 
-                DeleteProfileImageView()
+                DeleteProfileImageButtonView()
                     .onClick { onDeleteClick?() }
             }
         }

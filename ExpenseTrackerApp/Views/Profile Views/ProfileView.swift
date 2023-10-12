@@ -55,7 +55,7 @@ struct ProfileView: View {
                     }
                     .padding()
                 } else {
-                    Text("Keep up the great job of tracking your expenses using our app, \(userVM.user.name)!")
+                    Text("Keep up the great job of tracking your expenses using our app!")
                         .font(.caption)
                         .fontWeight(.bold)
                         .textCase(.uppercase)
