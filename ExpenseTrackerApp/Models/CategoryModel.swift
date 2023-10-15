@@ -30,14 +30,4 @@ struct CategoryModel {
         CategoryModel(name: ExpenseTrackerApp.Categories.vacation, icon: CategoryIcon(image: "beach.umbrella", color: UIColor.systemYellow)),
         CategoryModel(name: ExpenseTrackerApp.Categories.other, icon: CategoryIcon(image: "ellipsis", color: UIColor.systemGray))
     ]
-//    
-//    static func getFromDefault(name : ExpenseTrackerApp.Categories) -> CategoryModel? {
-//        for category in categories {
-//            if category.name == name {
-//                return category
-//            }
-//        }
-//        
-//        return nil
-//    }
 }

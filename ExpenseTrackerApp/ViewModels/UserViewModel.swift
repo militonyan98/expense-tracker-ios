@@ -55,7 +55,6 @@ class UserViewModel: ObservableObject {
     func update(user: UserModel) {
         userController?.update(user: user)
         
-        // fetch
         fetchUserData()
     }
 }

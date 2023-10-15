@@ -23,17 +23,4 @@ struct TransactionModel: Identifiable {
         self.amount = amount
         self.date = date
     }
-    
-    
-//    static var sampleTransaction = TransactionModel(id: UUID(), title: "Title", category: CategoryModel.getFromDefault(name: Categories.bills)!, type: TransactionType.income, amount: 0.0, date: Date.now)
-//    
-//    static var sampleTransactions = [
-//        TransactionModel(title: "Salary", category: CategoryModel.getFromDefault(name: Categories.salary)!, type: .income, amount: 2500, date: Date.now),
-//        TransactionModel(title: "Bonus", category: CategoryModel.getFromDefault(name: Categories.salary)!, type: .income, amount: 300, date: Date.now),
-//        TransactionModel(title: "Food", category: CategoryModel.getFromDefault(name: Categories.food)!, type: .expense, amount: 200, date: Date.now),
-//        TransactionModel(title: "Holiday", category: CategoryModel.getFromDefault(name: Categories.vacation)!, type: .expense, amount: 3200, date: Date.now),
-//        TransactionModel(title: "Salary", category: CategoryModel.getFromDefault(name: Categories.salary)!, type: .income, amount: 2500, date: Date.now),
-//        TransactionModel(title: "Clothing", category: CategoryModel.getFromDefault(name: Categories.shopping)!, type: .expense, amount: 350, date: Date.now),
-//        TransactionModel(title: "Bonus", category: CategoryModel.getFromDefault(name: Categories.salary)!, type: .income, amount: 300, date: Date.now)
-//    ]
 }

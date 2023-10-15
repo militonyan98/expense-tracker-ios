@@ -11,7 +11,6 @@ import CoreData
 class TransactionController {
     var dataController: DataController
     var categoryDataController: CategoryDataController
-   // var userController: UserController
     
     var moc: NSManagedObjectContext {
         return dataController.moc
@@ -20,7 +19,6 @@ class TransactionController {
     init(dataController: DataController) {
         self.dataController = dataController
         self.categoryDataController = CategoryDataController(dataController: dataController)
-       // self.userController = UserController(dataController: dataController)
     }
     
     func fetchTransactions() -> [Transaction] {

@@ -311,8 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				0FC764BB2A0E7A1500099D85 /* EditProfileInfoView.swift */,
-				0FA6E13C2AD84174009FC030 /* Custom Buttons */,
 				0FC764B72A0E79D800099D85 /* EditProfileNameView.swift */,
+				0FA6E13C2AD84174009FC030 /* Custom Buttons */,
 			);
 			path = "Edit Profile Info Views";
 			sourceTree = "<group>";

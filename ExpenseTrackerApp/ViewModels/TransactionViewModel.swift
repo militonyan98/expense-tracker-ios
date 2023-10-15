@@ -114,7 +114,6 @@ class TransactionViewModel: ObservableObject {
         fetchTransactionData()
     }
     
-    // remove
     func remove(at offsets: IndexSet) {
         for offset in offsets {
             let transactionToBeDeleted = sortedTransactions[offset]

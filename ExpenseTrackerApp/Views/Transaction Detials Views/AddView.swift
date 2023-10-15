@@ -81,11 +81,9 @@ struct AddView: View {
                         
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
-                        //NavigationLink(destination: TransactionsView()) {
-                            Text("Save")
-                                .foregroundColor((title.isEmpty || amount == nil) ? .gray : .cyan)
-                                .font(.body)
-                        //}
+                        Text("Save")
+                            .foregroundColor((title.isEmpty || amount == nil) ? .gray : .cyan)
+                            .font(.body)
                     }
                     .disabled(title.isEmpty || amount == nil)
                 }
@@ -97,11 +95,9 @@ struct AddView: View {
     func destination() -> AnyView {
         if fromTransactions! {
             return AnyView (
-                //NavigationLink(destination: TransactionsView()) {
-                    Text("Cancel")
-                        .foregroundColor(.orange)
-                        .font(.body)
-                //}
+                Text("Cancel")
+                    .foregroundColor(.orange)
+                    .font(.body)
             )
         }
         

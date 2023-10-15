@@ -29,7 +29,6 @@ struct CategoriesListView: View {
             }
             .listStyle(.plain)
             .searchable(text: $categoryVM.searchText, placement: .navigationBarDrawer(displayMode: .always))
-            //.scrollContentBackground(.hidden)
         }
     }
 }

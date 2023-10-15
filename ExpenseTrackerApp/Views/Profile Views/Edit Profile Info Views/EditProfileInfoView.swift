@@ -21,7 +21,7 @@ struct EditProfileInfoView: View {
             .padding(.bottom, 5)
             
             HStack {
-                UploadProfileImageButtonView() // no more argument required
+                UploadProfileImageButtonView()
                     .onClick { showingImagePicker = true }
                 
                 DeleteProfileImageButtonView()

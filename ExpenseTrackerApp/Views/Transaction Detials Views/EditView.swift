@@ -84,11 +84,9 @@ struct EditView: View {
                         
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
-                        //NavigationLink(destination: TransactionsView()) {
-                            Text("Save")
-                                .foregroundColor((title.isEmpty || amount == nil) ? .gray : .cyan)
-                                .font(.body)
-                        //}
+                        Text("Save")
+                            .foregroundColor((title.isEmpty || amount == nil) ? .gray : .cyan)
+                            .font(.body)
                     }
                     .disabled(title.isEmpty || amount == nil)
                 }
